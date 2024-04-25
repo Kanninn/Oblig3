@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Kino Bestiling</title>
+    <script src="bilett.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1> Bestill din bilett</h1>
+                <form class="form">
+                    <div class="form-group">
+                        <label for = "valg"> Velg Filmen</label>
+
+                        <select id="valg" name="valg">
+                            <option value="1" disabled selected>-Velg en Film-</option>
+                            <option value="Aladin"> Aladin</option>
+                            <option value="Elsa"> Elsa </option>
+                        </select>
+                        <span id="errorValg" style="color: red;"></span><br>
+                        <!-- oppretter en select der man kan velge mellom filmer, under er det laget en span for feilmelding dersom noe er feil, se js-->
+                    </div>
+                    <div class="form-group">
+                        <!-- nesten alle feltene fungere på samme måte, enten man tar inn bruker input og leder det videre til JS ved hjelp av id'en, eller en onaction blir brukt ved knapper for å utøve en funksjon i JS-->
+                        <label for="antall"> Antall biletter: </label>
+                        <input type="number" id="antall" min="0" name="antall" style="width: 35px">
+                        <span id="error1" style="color: red; position: absolute; left: 70px"></span><br>
+                     </div>
+
+                    <div class="form-group">
+                        <label for="fornavn">Fornavn: </label>
+                        <input type="text" id="fornavn" name="fornavn"  style="position: absolute; left: 80px">
+                        <span id="error2" style="color: red; position: absolute; left: 280px"></span><br>
+                    </div> <!-- input feltene er i en div for at feilmeldigen kommer riktig og ikke helt nederst (men vedsiden av feltet). ps: posisjonering av ting er ikke løst svært eligant, men på forelsening ble det agt at det er funksjonene som blir vurdert ikke "stylen" -->
+
+                    <div class="form-group">
+                        <label for="etternavn">Etternavn: </label>
+                        <input type="text" id="etternavn" name="etternavan" style="position: absolute; left: 80px">
+                        <span id="error3" style="color: red; position: absolute; left: 280px"></span><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="epost">Epost:  </label>
+                        <input type="text" id="epost" name="epost"  style="position: absolute; left: 80px">
+                        <span id="error4" style="color: red; position: absolute; left: 280px" ></span><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefon">Mobilnr: </label>
+                        <input type="number" name="telefon" id="telefon" style="position: absolute; left: 80px">
+                        <span id="error5" style="color: red; position: absolute; left: 280px"></span><br>
+                    </div>
+                    <
+
+
+                </form>
+                <button class="btn btn-primary" id="kjøp" name="kjøp" onclick="leggeTilBiletter()">Kjøp billetten</button>
+            </div>
+            <div class="col-md-8">
+                <button class="btn btn-success" id="hentBilettene" onclick="hentAlle()">Vis alle Bilettene </button>
+                <div id="arrayut"></div>
+                <button class="btn btn-danger" id="slettArray" name="slettArray" onclick="slettBilettene()"> Slett alle billetter</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
