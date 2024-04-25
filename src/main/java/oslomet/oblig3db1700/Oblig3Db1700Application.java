@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Oblig3Db1700Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Oblig3Db1700Application.class, args);
     }
 
